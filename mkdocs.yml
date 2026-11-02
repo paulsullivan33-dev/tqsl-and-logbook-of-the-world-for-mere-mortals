@@ -1,0 +1,27 @@
+site_name: TQSL and Logbook of the World for Mere Mortals
+site_description: The ARRL TrustedQSL signer and Logbook of the World explained in plain language. Requesting a callsign certificate, reading the files it exchanges, signing an ADIF log, and knowing exactly which steps need a real LoTW account, with the limits stated honestly.
+site_url: https://paulsullivan33-dev.github.io/tqsl-and-logbook-of-the-world-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What TQSL Is: what-tqsl-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing TQSL: installing-tqsl.md
+  - Getting a Callsign Certificate: getting-a-callsign-certificate.md
+  - Inside a Certificate Request: inside-a-certificate-request.md
+  - Station Locations: station-locations.md
+  - Signing Your First Log: signing-your-first-log.md
+  - Uploading and Confirmations: uploading-and-confirmations.md
+  - Renewals, Backups and Moving: renewals-backups-and-moving.md
+  - Preferences and the Command Line: preferences-and-command-line.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

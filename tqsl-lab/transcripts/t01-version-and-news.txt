@@ -1,0 +1,8 @@
+$ xvfb-run -a tqsl -v
+TQSL Version 2.7.2 [unknown]
+exit=255
+
+$ xvfb-run -a tqsl -n (news/pending check, no other options)
+A new TQSL release (V2.8.7) is available.
+A new TrustedQSL configuration file (V11.34) is available.
+exit=255

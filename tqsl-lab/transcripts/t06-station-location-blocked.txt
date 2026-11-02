@@ -1,0 +1,34 @@
+GUI + batch session log -- creating a Station Location with
+only a *pending* certificate request on file
+================================================================
+Same TQSL 2.7.2 session as t03/t04. The aim: create the "Lab
+Home" station location for N0CALL that signing would need.
+
+Attempt 1 -- the Station Locations tab, "Create a new Station
+Location" button. No dialog opens. The Status Log gains a line:
+
+    No certificates available
+
+Attempt 2 -- the Station Location menu, "Add Station Location"
+(the menu also offers Edit Station Location, and greyed-out
+Display Station Location Properties / Restore a Deleted
+Station Location). Same result; the Status Log now reads:
+
+    No certificates available
+    No certificates available
+
+Attempt 3 -- from the shell, in batch mode (transcript t05):
+
+$ tqsl -s -x
+TQSL Version 2.7.2 [unknown]
+No certificates available
+
+Conclusion, verified three ways: a Station Location is defined
+*in terms of* an issued Callsign Certificate -- the dialog's
+first field is the certificate it belongs to -- so a pending
+request is not enough. With no .tq6 ever issued for the dummy
+call N0CALL (there cannot be one; see the guide's chapter on
+the LoTW account flow), this step cannot be completed in the
+lab. The station-location dialog's fields and the procedure
+are therefore taught from TQSL's bundled help in the guide,
+labelled documented-only; nothing about them was simulated.

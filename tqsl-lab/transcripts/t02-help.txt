@@ -1,0 +1,22 @@
+$ xvfb-run -a tqsl -h
+Usage: tqsl [-a <str>] [-b <str>] [-c <str>] [-d] [-e <str>] [-f <str>] [-h] [-i <str>] [-l <str>] [-n] [-o <str>] [-p <str>] [-q] [-s] [-t <str>] [-u] [-v] [-w] [-x] [Input ADIF or Cabrillo log file to sign]
+  -a, --action=<str>   	Specify dialog action - abort, all, compliant or ask
+  -b, --begindate=<str>	Specify start date for QSOs to sign
+  -c, --callsign=<str> 	Specify default callsign for log signing
+  -d, --nodate         	Suppress date range dialog
+  -e, --enddate=<str>  	Specify end date for QSOs to sign
+  -f, --verify=<str>   	Specify QSO verification action - ignore, report or update
+  -h, --help           	Display command line help
+  -i, --import=<str>   	Import a certificate file (.p12 or .tq6)
+  -l, --location=<str> 	Selects Station Location
+  -n, --updates        	Check for updates to tqsl and the configuration file
+  -o, --output=<str>   	Output file name (defaults to input name minus extension plus .tq8
+  -p, --password=<str> 	Passphrase for the signing key
+  -q, --quiet          	Quiet Mode - same behavior as -x
+  -s, --editlocation   	Edit (if used with -l) or create Station Location
+  -t, --diagnose=<str> 	File name for diagnostic tracking log
+  -u, --upload         	Upload after signing instead of saving
+  -v, --version        	Display the version information and exit
+  -w, --wipe           	Wipe the TQSL uploads database
+  -x, --batch          	Exit after processing log (otherwise start normally)
+exit=255

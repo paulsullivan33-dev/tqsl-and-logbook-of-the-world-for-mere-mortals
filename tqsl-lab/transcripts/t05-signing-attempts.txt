@@ -1,0 +1,43 @@
+$ HOME=<lab home> tqsl -s -x   (add a station location, batch mode)
+TQSL Version 2.7.2 [unknown]
+No certificates available
+exit=255
+
+$ tqsl -d -a all -x -l "Lab Home" sample-log.adi   (sign with a location that does not exist)
+TQSL Version 2.7.2 [unknown]
+The selected station location could not be found
+Final Status: Command Syntax Error(10)
+exit=10
+
+$ tqsl -i N0CALL.tq5   (import: a .tq5 request is not an importable certificate)
+TQSL Version 2.7.2 [unknown]
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.661: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.661: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.661: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.661: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.663: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.663: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.663: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.663: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.663: Negative content width -4 (allocation 16, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.664: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.664: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.664: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.664: Negative content width -2 (allocation 18, extents 10x10) while allocating gadget (node button, owner GtkButton)
+
+(tqsl:86476): Gtk-WARNING **: 15:31:31.664: Negative content width -4 (allocation 16, extents 10x10) while allocating gadget (node button, owner GtkButton)
+exit=124
+ls: cannot access 'sample-log.tq8': No such file or directory

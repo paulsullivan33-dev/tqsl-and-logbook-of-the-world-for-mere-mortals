@@ -1,0 +1,126 @@
+GUI session log -- requesting a Callsign Certificate for N0CALL
+================================================================
+TQSL 2.7.2 (Ubuntu package trustedqsl 2.7.2-1build3) run under a
+virtual display with an empty, throwaway home directory, so the
+run starts from nothing. Dialog texts below are transcribed
+verbatim from the session; file evidence is from the shell.
+
+First launch
+------------
+A Notice dialog over the bundled help window:
+
+    "Please review the introductory documentation before using
+     this program."                                   [OK]
+
+then an Alert:
+
+    "You have no callsign certificate installed on this computer
+     with which to sign log submissions.
+     Would you like to request a callsign certificate now?"
+                                                   [No]  [Yes]
+
+Answering Yes opens the wizard "Request a new Callsign
+Certificate", page 1:
+
+    Call sign:            [____________]
+    DXCC entity:          [____________ v]
+    Date of the first QSO you made or will make using this callsign:
+        Y [__ v]  M [__ v]  D [__ v]
+    Date of the last QSO you made or will make using this callsign:
+    (Leave this date blank if this is still your valid callsign.)
+        Y [__ v]  M [__ v]  D [__ v]
+
+The page validates as you type; its messages, in the order the
+lab met them: "You must enter a valid call sign." / "You must
+select a DXCC entity." / "QSO begin date: You must choose proper
+values for Year, Month and Day."
+
+Attempt A -- callsign N0CALL, DXCC entity UNITED STATES OF
+AMERICA, first QSO 2020-01-01, last QSO blank. Clicking Next:
+
+    "The callsign N0CALL is not currently registered in the FCC
+     ULS database as of null.
+     If this is a newly registered call, you must wait at least
+     one business day for it to be valid. Please enter a
+     currently valid callsign."                        [OK]
+
+TQSL checks United States callsigns against the FCC database it
+downloads, and N0CALL -- the dummy call, registered to nobody --
+is refused. The wizard cannot proceed with a US entity.
+
+Attempt B -- DXCC entity -NONE-:
+
+    "You cannot select DXCC Entity NONE as you must sign any
+     request for entity NONE and you have no valid Callsign
+     Certificates that you can use to sign this request." [OK]
+
+Attempt C -- DXCC entity CANADA (DXCC entity number 1), same
+callsign and dates. No database check blocks it, and Next
+advances to page 2:
+
+    Name       [____________]
+    Address    [____________]
+               [____________]
+    City       [____________]
+    State      [____________]
+    Zip/Postal [____________]
+    Country    [____________]
+
+(Clicking Next with the page empty pops up "You must enter your
+name"; each field is required.) The lab entered plainly
+fictitious details: Alex Example, 123 Example Street,
+Exampleton, Ontario, A1A 1A1, Canada.
+
+Page 3 (the last; the button now reads Finish):
+
+    Your e-mail address  [____________]
+
+    "Note: The e-mail address you provide here is the address to
+     which the issued Certificate will be sent. Make sure it's
+     the correct address!"
+
+The lab entered alex@example.com and clicked Finish. TQSL then
+asked:
+
+    "Do you want to upload this certificate request to LoTW now?
+     You do not need an account on LoTW to do this."
+                                                   [No]  [Yes]
+
+The lab answered NO -- nothing was uploaded anywhere. TQSL then
+offered a standard save dialog (filter "tQSL Cert Request files
+(*.tq5)", proposed name N0CALL.tq5), and the request was saved
+into the lab folder. A final dialog:
+
+    "You may now send your new certificate request
+     (/home/hatch/workspace/tqsl-labwork/N0CALL.tq5)
+     to:
+         lotw-help@arrl.org
+     or see:
+         https://www.arrl.org/lotw/"                   [OK]
+
+File evidence, immediately after the save
+-----------------------------------------
+$ ls -la ~/workspace/tqsl-labwork/N0CALL.tq5
+-rw-rw---- 1 root root 1164 Nov  2 15:28 N0CALL.tq5
+
+$ ls -la ~/.tqsl/keys/
+-rw-rw---- 1 root root 1634 Nov  2 15:28 N0CALL
+
+TQSL generated a key pair at the moment of the request: the
+public half travelled into the .tq5 (see t07), and the private
+half stayed behind in ~/.tqsl/keys/N0CALL -- a text file whose
+fields mirror the request and which ends with an unencrypted
+<PRIVATE_KEY:916> PEM block ("-----BEGIN PRIVATE KEY-----").
+No passphrase was asked for anywhere in this wizard; the
+pending certificate's Properties dialog (t04) confirms
+"Passphrase: None".
+
+The full text of N0CALL.tq5 is kept beside this transcript as
+tqsl-lab/N0CALL.tq5 and is taken apart field by field in
+transcript t07. Its header line reads:
+
+    <TQSL_IDENT:37>TQSL: 2.7.2, Lib: V2.5, Config: 11.26
+
+-- TQSL version 2.7.2, signing library V2.5, configuration data
+version 11.26 at the time the request was made (the
+configuration was updated to 11.34 later in the session, t04).

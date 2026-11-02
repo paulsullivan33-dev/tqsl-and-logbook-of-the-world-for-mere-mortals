@@ -1,0 +1,89 @@
+GUI session log -- the main window, the pending certificate,
+and the configuration-data update
+================================================================
+Same TQSL 2.7.2 session as t03.
+
+The main window
+---------------
+Menus: File | Station Location | Callsign Certificate | Help.
+Three tabs: Log Operations, Station Locations, Callsign
+Certificates, with a Status Log pane beneath them.
+
+Log Operations offers four actions:
+  - Sign a log and upload it automatically to LoTW
+  - Sign a log and save it for uploading later
+  - Create an ADIF file for signing and uploading
+  - Log in to the Logbook of the World Site
+
+The File menu holds: Sign and upload ADIF or Cabrillo File...,
+Sign and save ADIF or Cabrillo file..., Backup Station
+Locations, Certificates, and Preferences..., Restore Station
+Locations, Certificates, and Preferences..., Create New ADIF
+file..., Edit existing ADIF file..., Display or Modify
+Preferences..., Language, Diagnostic Mode, Exit TQSL.
+
+The pending certificate
+-----------------------
+The Callsign Certificates tab shows a tree:
+
+    Callsign Certificates
+      Active, usable certificates            (empty)
+      Certificates that are awaiting ARRL approval
+        N0CALL - CANADA                      (pending/clock icon)
+
+Right-hand actions: Load a Callsign Certificate / Save a
+Callsign Certificate / Renew a Callsign Certificate / Display
+a Callsign Certificate.
+
+Displaying the N0CALL entry ("Certificate Properties"):
+
+    Certificate Request:  Awaiting response from ARRL
+    Organization:         American Radio Relay League
+                          Logbook of the World
+    Serial:               N/A
+    Operator:             N/A
+    Call sign:            N0CALL
+    DXCC Entity:          CANADA
+    QSO Start Date:       2020-01-01
+    QSO End Date:         N/A
+    Passphrase:           None
+
+Two update dialogs
+------------------
+On this run TQSL also announced, in popups:
+
+    "A new TQSL release (V2.8.7) is available!
+     Download from: http://www.arrl.org/files/file/LoTW%20Instructions/tqsl-2.8.7.tar.gz
+     More details at https://sourceforge.net/projects/trustedqsl/"
+
+(the lab noted it and did not upgrade mid-lab), and:
+
+    "An updated TrustedQSL configuration file (V11.34) is
+     available! The configuration file installs definitions for
+     entities, modes, etc. Click 'OK' to install the new
+     configuration file, or Cancel to ignore it."
+
+The lab clicked OK; TQSL answered "Configuration file
+successfully updated". Evidence on disk afterwards:
+
+$ ls -la ~/.tqsl/
+drwx------ certs
+drwx------ certtrash
+-rw-rw---- 67225 config.tq6     <- the signed container it arrived in
+-rw-rw---- 480469 config.xml    <- the installed configuration data
+drwx------ keys
+-rw-r----- uploaded.db
+
+$ head -1 ~/.tqsl/config.xml
+<tqslconfig majorversion="11" minorversion="34">
+
+So the entity list, mode list and their kin are not compiled
+into the program: they arrive as a signed data file (the same
+.tq6 container shape as a certificate response) and are
+versioned separately from the program itself.
+
+On exit, TQSL also wrote automatic configuration backups:
+
+$ ls ~/.tqsl/*.tbk
+tqslconfig-2026-11-02-15-30.tbk
+tqslconfig.tbk

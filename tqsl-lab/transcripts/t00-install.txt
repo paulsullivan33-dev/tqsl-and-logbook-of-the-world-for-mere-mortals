@@ -1,0 +1,44 @@
+$ sudo apt-get update (tail) and install trustedqsl
+E: Could not get lock /var/lib/apt/lists/lock. It is held by process 67308 (apt-get)
+E: Unable to lock directory /var/lib/apt/lists/
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 67810 (apt-get)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+
+$ apt-cache policy trustedqsl
+trustedqsl:
+  Installed: (none)
+  Candidate: 2.7.2-1build3
+  Version table:
+     2.7.2-1build3 500
+        500 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 Packages
+        500 http://mirror.cogentco.com/pub/linux/ubuntu noble/universe amd64 Packages
+
+$ dpkg -L trustedqsl (binaries and docs)
+dpkg-query: package 'trustedqsl' is not installed
+Use dpkg --contents (= dpkg-deb --contents) to list archive files contents.
+$ sudo apt-get install -y trustedqsl
+Selecting previously unselected package trustedqsl.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 183751 files and directories currently installed.)
+Preparing to unpack .../trustedqsl_2.7.2-1build3_amd64.deb ...
+Unpacking trustedqsl (2.7.2-1build3) ...
+Setting up trustedqsl (2.7.2-1build3) ...
+Processing triggers for hicolor-icon-theme (0.17-2) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for desktop-file-utils (0.27-2build1) ...
+
+$ apt-cache policy trustedqsl
+trustedqsl:
+  Installed: 2.7.2-1build3
+  Candidate: 2.7.2-1build3
+  Version table:
+ *** 2.7.2-1build3 500
+        500 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 Packages
+        500 http://mirror.cogentco.com/pub/linux/ubuntu noble/universe amd64 Packages
+        100 /var/lib/dpkg/status
+
+$ dpkg -L trustedqsl | grep bin
+/usr/bin/tqsl
+/usr/share/man/man1
+/usr/share/man/man1/tqsl.1.gz
+/usr/share/man/man5
+/usr/share/man/man5/tqsl.5.gz
